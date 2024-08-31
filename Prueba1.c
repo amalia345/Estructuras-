@@ -20,15 +20,15 @@ int cuentaVocales(char cadena[]);
 int main()
     {
         char cadenita[50];
-        printf("Hola dame una palabra");
+        printf("Hola dame una palabra\n");
         scanf("%s", cadenita);
         cuentaVocales(cadenita);
         return 0;
     }
 
 int cuentaVocales(char cadena[]){
-    printf("Dentro de la funcion");
-    printf("%c",cadena[0]); //Imprime el elemento 0 del string
+    printf("Dentro de la funcion\n");
+    //printf("%c",cadena[0]); //Imprime el elemento 0 del string
 
 int contadorA=0;
 int contadorE=0;
@@ -42,26 +42,26 @@ int consonantes=0;
             contadorA++;
         }
         else if (cadena[i]=='e'){
-            contadorA++;
+            contadorE++;
         }
         else if (cadena[i]=='i'){
-            contadorA++;
+            contadorI++;
         }
         else if (cadena[i]=='o'){
-            contadorA++;
+            contadorO++;
         }
         else if (cadena[i]=='u'){
-            contadorA++;
+            contadorU++;
         }
         else {
             consonantes++;
         }
     }
-    printf("Las A fueron : %d ", contadorA);
-    printf("Las E fueron : %d ", contadorE);
-    printf("Las I fueron : %d ", contadorI);
-    printf("Las O fueron : %d ", contadorO);
-    printf("Las U fueron : %d ", contadorU);
-    printf("Las Consonantes fueron : %d ", consonantes);
+    printf("Las A fueron : %d \n", contadorA);
+    printf("Las E fueron : %d \n", contadorE);
+    printf("Las I fueron : %d \n", contadorI);
+    printf("Las O fueron : %d \n", contadorO);
+    printf("Las U fueron : %d \n", contadorU);
+    printf("Las Consonantes fueron : %d \n", consonantes);
 
 }
