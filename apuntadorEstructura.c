@@ -1,3 +1,5 @@
+//¿Que hace el programa? 
+
 #include <stdio.h>
 // Direccion dememoria - apuntador 
 typedef struct 
