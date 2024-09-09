@@ -1,7 +1,6 @@
 //APUNTADORES
 #include <stdio.h>
-int main()
-{
+int main(){
     int arreglo[5];
     int i;
     int *pointer;
@@ -17,10 +16,8 @@ int main()
         }
         
         scanf("%d", &arreglo[i]);
-
     }
-    for ( i = 0; i < 5; i++)
-    {   
+    for ( i = 0; i < 5; i++){   
         printf("\nIn en la celda %d está el valor %d em la direccion %lu", i, arreglo[i], &arreglo[i]);
         /* %lu LOng inside, con linux funcion %p */
     }

@@ -26,17 +26,17 @@ var2=*ptr;*/
 luego imprimirlo con el número de celda y su direccion.*/
 int main()
 {
-    int arreglo[5];
     int i ;
-    for ( i = 0; i < 25; i++){
+    int arreglo[5];
+    for ( i = 0; i < 5; i++){
         /* code */
-        printf("Ingreses un entero:");
+        printf("\nIngreses un entero:");
         scanf("%d", &arreglo[i]);
 
     }
     for ( i = 0; i < 5; i++)
     {   
-        printf("In en la celda %d está el valor %d em la direccion %p", i, arreglo[i], &arreglo[i]);
+        printf("\nIn en la celda %d está el valor %d em la direccion %lu", i, arreglo[i], &arreglo[i]);
         /* %lu LOng inside, con linux funcion %p */
     }
     

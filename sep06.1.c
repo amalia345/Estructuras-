@@ -1,4 +1,4 @@
-//CHacar si una cadena ingresada desde el techado es un palindromo primera version.
+//Checar si una cadena ingresada desde el techado es un palindromo primera version.
 //Palindromo es una palabra que se escribe igual al derecho y al reves 
 //COncatenacion de cadena--> investigar 
 //Bandera: Si se cumplio o no  la condicion 
