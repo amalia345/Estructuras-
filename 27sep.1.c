@@ -80,8 +80,8 @@ int main(){
 }
 
 int sacarDePila(struct Pila *ptrP){
-    *ptrP->ptrC--;
-    return(*ptrP->ptrC);
+    ptrP->ptrC--;/// se supone que aqui los ptrsP llevan *
+    return(ptrP->ptrC);
 }
 
 int estaVaciaPila(struct Pila *ptrP){
@@ -92,7 +92,7 @@ int estaVaciaPila(struct Pila *ptrP){
 
 }
 
-int estallenaPIla(struct Pila *ptrP){
+int estallenaPila(struct Pila *ptrP){
     if(ptrP->ptrC== &ptrP->arreglo[TAM])
         return 1;
     else
