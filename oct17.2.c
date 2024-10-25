@@ -1,53 +1,50 @@
-
-
-// Con nodo auxiliar
-//Funciones
+//Pila dinámica sin nodo de cabecera (para enteros)
 
 #include <stdio.h>
 #include <stdlib.h>
 
 struct nodo{
-    int dato;
     struct nodo *ptrSiguiente;
+    int dato;
 };
-
 struct nodo* crearNodo (int);
-int meterNodo (struct nodo*, int);
-int imprCont(struct nodo*);
-int elimNodo (struct nodo*);
+int meterNodo (struct nodo**, int);
+int imprCont(struct nodo**);
 int menu();
 
 int main (){
+    struct nodo *miPunteroReferencia1, **miPunteroReferencia2;
+    miPunteroReferencia1=NULL;
+    miPunteroReferencia2=&miPunteroReferencia1;
     int midato;
-    struct nodo *miPunteroReferencia;
-    miPunteroReferencia =crearNodo(-1000);
+
 
     for (;;){
         switch (menu()){
         case 1:
            printf ("Ingrese dato\n");
            scanf ("%d",&midato);
-           meterNodo (miPunteroReferencia,midato);
+           meterNodo (miPunteroReferencia2,midato);
 
         break;
 
         case 2:
-            imprCont(miPunteroReferencia);
+            imprCont(miPunteroReferencia2);
 
         break;
 
         case 3:
-            elimNodo(miPunteroReferencia);
+            elimNodo(miPunteroReferencia2);
         break;
 
 
         case 4:
             exit (0);
         };
-    };
-
+    }
     return 0;
-};
+}
+
 
 struct nodo* crearNodo (int dato1){
     struct nodo *ptrNuevo;
@@ -58,21 +55,21 @@ struct nodo* crearNodo (int dato1){
     return ptrNuevo;
 };
 
-int meterNodo (struct nodo *ptrRef, int dato1){
+int meterNodo (struct nodo **ptrRef2, int dato1){
     struct nodo *ptrNew;
     ptrNew = crearNodo (dato1);
-    if (ptrRef->ptrSiguiente==NULL)
-        ptrRef->ptrSiguiente=ptrNew;
+    if ((*ptrRef2)==NULL)
+        (*ptrRef2)=ptrNew;
     else{
-        ptrNew->ptrSiguiente=ptrRef->ptrSiguiente;
-        ptrRef->ptrSiguiente=ptrNew;
+        ptrNew->ptrSiguiente=*ptrRef2;
+        *ptrRef2=ptrNew;
     }
     return 0;
 }
 
-int imprCont(struct nodo *ptrRef){
+int imprCont(struct nodo **ptrRef2){
     struct nodo *ptrRecoger;
-    ptrRecoger=ptrRef->ptrSiguiente;
+    ptrRecoger=*ptrRef2;
     while (ptrRecoger!=NULL){
         printf ("%d\t", ptrRecoger->dato);
         ptrRecoger=ptrRecoger->ptrSiguiente;
@@ -80,27 +77,26 @@ int imprCont(struct nodo *ptrRef){
 return 0;
 }
 
-int elimNodo (struct nodo* ptrRef){
+int elimNodo (struct nodo **ptrRef2){
     struct nodo *ptrBas;
-    if (ptrRef->ptrSiguiente==NULL){
+    if ((*ptrRef2)==NULL){
         printf ("La pila esta vacía");
         return -1;
     }
-    if (ptrRef->ptrSiguiente->ptrSiguiente==NULL){
-        ptrBas=ptrRef->ptrSiguiente;
-        ptrRef->ptrSiguiente=NULL;
+    if ((*ptrRef2)->ptrSiguiente==NULL){
+        ptrBas=(*ptrRef2);
+        (*ptrRef2)=NULL;
         printf ("El dato recuperado es %d\n", ptrBas->dato);
         free(ptrBas);
     }
     else {
-        ptrBas=ptrRef->ptrSiguiente;
-        ptrRef->ptrSiguiente=ptrBas->ptrSiguiente;
+        ptrBas=*ptrRef2;
+        *ptrRef2=ptrBas->ptrSiguiente;
         printf ("El dato recuperado es %d\n", ptrBas->dato);
         free(ptrBas);
     }
     return 0;
 }
-
 
 int menu(){
         int opc;

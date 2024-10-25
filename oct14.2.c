@@ -3,7 +3,7 @@
 #include <stdio.h>
 struct nodo{
     int dato;
-    struct nodo *ptrSiguiente, *ptrReturn;
+    struct nodo *ptrSiguienteuiente, *ptrReturn;
 };
 
 int main(){
@@ -11,31 +11,31 @@ int main(){
     int midato;
     struct nodo *miPtrFeferencia;
     miPtrFeferencia=crearNodo(-1000);
-    //miPtrFeferencia->ptrSiguiente=NULL;
+    //miPtrFeferencia->ptrSiguienteuiente=NULL;
     //Aqui acaba el nodo de cabecera
 
-    ptrNuevo=(struct nodo*)malloc(sizeof(struct nodo));
+    ptrNuevouevo=(struct nodo*)malloc(sizeof(struct nodo));
     printf("\nIngresa un entero");
-    scanf("%d", &ptrNuevo->dato);
-    ptrNuevo->ptrSiguiente=NULL;
+    scanf("%d", &ptrNuevouevo->dato);
+    ptrNuevouevo->ptrSiguienteuiente=NULL;
 
-    ptrReferencia->ptrSiguiente=ptrNuevo//Unimos el nodo referencia al nodo de cabecera 
-    ptrNuevo=(struct nodo*)malloc(sizeof(struct nodo));
+    ptrReferencia->ptrSiguienteuiente=ptrNuevouevo//Unimos el nodo referencia al nodo de cabecera 
+    ptrNuevouevo=(struct nodo*)malloc(sizeof(struct nodo));
     scanf("\nIngrese entero");
-    scanf("%d", &ptrNuevo->dato);
-    ptrNuevo->ptrSiguiente=NULL;
+    scanf("%d", &ptrNuevouevo->dato);
+    ptrNuevouevo->ptrSiguienteuiente=NULL;
 
     //1
-    ptrNuevo->ptrSiguiente=ptrReferencia->ptrSiguiente;
+    ptrNuevouevo->ptrSiguienteuiente=ptrReferencia->ptrSiguienteuiente;
     //2
-    ptrReferencia->ptrSiguiente=ptrNuevo; 
+    ptrReferencia->ptrSiguienteuiente=ptrNuevouevo; 
 
-    ptrNuevo=(struct nodo*)malloc(sizeof(struct nodo));
+    ptrNuevouevo=(struct nodo*)malloc(sizeof(struct nodo));
     printf("\nINgrese un entero");
-    scanf("%d", &ptrNuevo->dato);
-    ptrNuevo->ptrSiguiente=NULL;
+    scanf("%d", &ptrNuevouevo->dato);
+    ptrNuevouevo->ptrSiguienteuiente=NULL;
 
-    ptrNuevo->ptrSiguiente=ptrReferencia->ptrSiguiente;
-    ptrReferencia->ptrSiguiente=ptrNuevo;
+    ptrNuevouevo->ptrSiguienteuiente=ptrReferencia->ptrSiguienteuiente;
+    ptrReferencia->ptrSiguienteuiente=ptrNuevouevo;
 
 }

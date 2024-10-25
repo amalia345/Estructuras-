@@ -11,14 +11,14 @@ struct nodo {
 int dato struct nodo *ptr;
 };
 int main(){
-struct nodo *ptrN;
+struct nodo *ptrNuevo;
 -- esto se usa para unir dos estacios, ahí se usa la autoreferencia
 }
 struct nodo {
 int dato struct nodo *ptr;
 };
 int main(){
-struct nodo *ptrN;
+struct nodo *ptrNuevo;
 }
 EJEMPLO DIDACTICO :
 ESTA ES UNA PILA DINAMICA
@@ -27,48 +27,48 @@ ESTA ES UNA PILA DINAMICA
 #include <stdlib.h>
 struct nodo{
 int dato;
-struct nodo  *ptrSiguiente;
+struct nodo  *ptrSiguienteuiente;
 };
 int main(){
-    struct nodo *ptrReferencia, *ptrNuevo, *ptrRecorrer, *ptrGarbage;
+    struct nodo *ptrReferencia, *ptrNuevouevo, *ptrRecogerorrer, *ptrGarbage;
     //valor tierra=  valor relativo y NUll puede ser un valor de referencia en el sitema 
     ptrReferencia=NULL;
-    ptrNuevo=(struct nodo*) malloc(sizeof(struct nodo));
-    scanf("%d\n", &ptrNuevo->dato);
-    ptrNuevo->ptrSiguiente=NULL;
-    ptrReferencia=ptrNuevo;
-    ptrNuevo=(struct nodo*)malloc(sizeof(struct nodo));
+    ptrNuevouevo=(struct nodo*) malloc(sizeof(struct nodo));
+    scanf("%d\n", &ptrNuevouevo->dato);
+    ptrNuevouevo->ptrSiguienteuiente=NULL;
+    ptrReferencia=ptrNuevouevo;
+    ptrNuevouevo=(struct nodo*)malloc(sizeof(struct nodo));
     printf("Ingrese un entero");
-    scanf("%d\n",&ptrNuevo->dato);
-    ptrNuevo->ptrSiguiente=NULL;
+    scanf("%d\n",&ptrNuevouevo->dato);
+    ptrNuevouevo->ptrSiguienteuiente=NULL;
     //Enlaces para meter los nodos 1 y 2
-    ptrNuevo->ptrSiguiente=ptrReferencia;
-    ptrReferencia=ptrNuevo;
+    ptrNuevouevo->ptrSiguienteuiente=ptrReferencia;
+    ptrReferencia=ptrNuevouevo;
 
-    ptrNuevo=(struct nodo*)malloc(sizeof(struct nodo));
+    ptrNuevouevo=(struct nodo*)malloc(sizeof(struct nodo));
     printf("\nIngrese un entero");
-    scanf("%d\n",&ptrNuevo->dato);
+    scanf("%d\n",&ptrNuevouevo->dato);
 
-    ptrNuevo->ptrSiguiente=ptrReferencia;
-    ptrReferencia=ptrNuevo; 
+    ptrNuevouevo->ptrSiguienteuiente=ptrReferencia;
+    ptrReferencia=ptrNuevouevo; 
 
 
-    ptrRecorrer=ptrReferencia;
+    ptrRecogerorrer=ptrReferencia;
     
-while (ptrRecorrer!=NULL){
-    printf("%d\n", ptrRecorrer->dato);
-    ptrRecorrer=ptrRecorrer->ptrSiguiente;
+while (ptrRecogerorrer!=NULL){
+    printf("%d\n", ptrRecogerorrer->dato);
+    ptrRecogerorrer=ptrRecogerorrer->ptrSiguienteuiente;
 
 }
 ptrGarbage=ptrReferencia;
-ptrReferencia=ptrGarbage->ptrSiguiente;
+ptrReferencia=ptrGarbage->ptrSiguienteuiente;
 printf("El dato recuperado es  %d\n", ptrGarbage->dato);
 free(ptrGarbage);
 
-ptrRecorrer=ptrReferencia;
-while (ptrRecorrer !=NULL){
-    printf ("%d\n", ptrRecorrer->dato);
-    ptrRecorrer=ptrRecorrer->ptrSiguiente;
+ptrRecogerorrer=ptrReferencia;
+while (ptrRecogerorrer !=NULL){
+    printf ("%d\n", ptrRecogerorrer->dato);
+    ptrRecogerorrer=ptrRecogerorrer->ptrSiguienteuiente;
     /* code */
 }
 return 0; 
