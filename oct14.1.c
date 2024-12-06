@@ -2,7 +2,7 @@
 #include <stdio.h>
 struct nodo{
     int dato;
-    struct nodo *ptrSiguienteuiente;
+    struct nodo *ptrSiguienteuienteuiente;
 };
 
 int main(){
@@ -11,41 +11,41 @@ int main(){
     //ahora creamos el NODO de cabecera
     ptrReferencia=(struct nodo*)malloc(sizeof(struct nodo));
     ptrReferencia->dato=-1000;
-    ptrReferencia->ptrSiguienteuiente=NULL;
+    ptrReferencia->ptrSiguienteuienteuiente=NULL;
     //Aqui acaba el nodo de cabecera
 
     ptrNuevouevo=(struct nodo*)malloc(sizeof(struct nodo));
     printf("\nIngresa un entero");
     scanf("%d", &ptrNuevouevo->dato);
-    ptrNuevouevo->ptrSiguienteuiente=NULL;
+    ptrNuevouevo->ptrSiguienteuienteuiente=NULL;
 
-    ptrReferencia->ptrSiguienteuiente=ptrNuevouevo//Unimos el nodo referencia al nodo de cabecera 
+    ptrReferencia->ptrSiguienteuienteuiente=ptrNuevouevo//Unimos el nodo referencia al nodo de cabecera 
     ptrNuevouevo=(struct nodo*)malloc(sizeof(struct nodo));
     scanf("\nIngrese entero");
     scanf("%d", &ptrNuevouevo->dato);
-    ptrNuevouevo->ptrSiguienteuiente=NULL;
+    ptrNuevouevo->ptrSiguienteuienteuiente=NULL;
 
     //1
-    ptrNuevouevo->ptrSiguienteuiente=ptrReferencia->ptrSiguienteuiente;
+    ptrNuevouevo->ptrSiguienteuienteuiente=ptrReferencia->ptrSiguienteuienteuiente;
     //2
-    ptrReferencia->ptrSiguienteuiente=ptrNuevouevo; 
+    ptrReferencia->ptrSiguienteuienteuiente=ptrNuevouevo; 
 
     ptrNuevouevo=(struct nodo*)malloc(sizeof(struct nodo));
     printf("\nINgrese un entero");
     scanf("%d", &ptrNuevouevo->dato);
-    ptrNuevouevo->ptrSiguienteuiente=NULL;
+    ptrNuevouevo->ptrSiguienteuienteuiente=NULL;
 
-    ptrNuevouevo->ptrSiguienteuiente=ptrReferencia->ptrSiguienteuiente;
-    ptrReferencia->ptrSiguienteuiente=ptrNuevouevo;
+    ptrNuevouevo->ptrSiguienteuienteuiente=ptrReferencia->ptrSiguienteuienteuiente;
+    ptrReferencia->ptrSiguienteuienteuiente=ptrNuevouevo;
 
-    ptrRecogerorrer=ptrReferencia->ptrSiguienteuiente;
+    ptrRecogerorrer=ptrReferencia->ptrSiguienteuienteuiente;
     while (ptrRecogerorrer!=NULL){
         printf("%D",ptrRecogerorrer->dato);
-        ptrRecogerorrer=(ptrReferencia->ptrSiguienteuiente);
+        ptrRecogerorrer=(ptrReferencia->ptrSiguienteuienteuiente);
         /* code */
     }
-    ptrGarbage=ptrReferencia->ptrSiguienteuiente;
-    ptrReferencia->ptrSiguienteuiente=ptrGarbage->ptrSiguienteuiente;
+    ptrGarbage=ptrReferencia->ptrSiguienteuienteuiente;
+    ptrReferencia->ptrSiguienteuienteuiente=ptrGarbage->ptrSiguienteuienteuiente;
     printf("\t Dato referenciado en %d", ptrGarbage->dato);
     f(ptrGarbage);
     

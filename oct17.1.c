@@ -8,7 +8,7 @@
 
 struct nodo{
     int dato;
-    struct nodo *ptrSiguiente;
+    struct nodo *ptrSiguienteuiente;
 };
 
 struct nodo* crearNodo (int);
@@ -53,7 +53,7 @@ struct nodo* crearNodo (int dato1){
     struct nodo *ptrNuevo;
     ptrNuevo=(struct nodo*)malloc(sizeof(struct nodo));
     ptrNuevo->dato=dato1;
-    ptrNuevo->ptrSiguiente=NULL;
+    ptrNuevo->ptrSiguienteuiente=NULL;
 
     return ptrNuevo;
 };
@@ -61,40 +61,40 @@ struct nodo* crearNodo (int dato1){
 int meterNodo (struct nodo *ptrRef, int dato1){
     struct nodo *ptrNew;
     ptrNew = crearNodo (dato1);
-    if (ptrRef->ptrSiguiente==NULL)
-        ptrRef->ptrSiguiente=ptrNew;
+    if (ptrRef->ptrSiguienteuiente==NULL)
+        ptrRef->ptrSiguienteuiente=ptrNew;
     else{
-        ptrNew->ptrSiguiente=ptrRef->ptrSiguiente;
-        ptrRef->ptrSiguiente=ptrNew;
+        ptrNew->ptrSiguienteuiente=ptrRef->ptrSiguienteuiente;
+        ptrRef->ptrSiguienteuiente=ptrNew;
     }
     return 0;
 }
 
 int imprCont(struct nodo *ptrRef){
     struct nodo *ptrRecoger;
-    ptrRecoger=ptrRef->ptrSiguiente;
+    ptrRecoger=ptrRef->ptrSiguienteuiente;
     while (ptrRecoger!=NULL){
         printf ("%d\t", ptrRecoger->dato);
-        ptrRecoger=ptrRecoger->ptrSiguiente;
+        ptrRecoger=ptrRecoger->ptrSiguienteuiente;
     }
 return 0;
 }
 
 int elimNodo (struct nodo* ptrRef){
     struct nodo *ptrBas;
-    if (ptrRef->ptrSiguiente==NULL){
+    if (ptrRef->ptrSiguienteuiente==NULL){
         printf ("La pila esta vacía");
         return -1;
     }
-    if (ptrRef->ptrSiguiente->ptrSiguiente==NULL){
-        ptrBas=ptrRef->ptrSiguiente;
-        ptrRef->ptrSiguiente=NULL;
+    if (ptrRef->ptrSiguienteuiente->ptrSiguienteuiente==NULL){
+        ptrBas=ptrRef->ptrSiguienteuiente;
+        ptrRef->ptrSiguienteuiente=NULL;
         printf ("El dato recuperado es %d\n", ptrBas->dato);
         free(ptrBas);
     }
     else {
-        ptrBas=ptrRef->ptrSiguiente;
-        ptrRef->ptrSiguiente=ptrBas->ptrSiguiente;
+        ptrBas=ptrRef->ptrSiguienteuiente;
+        ptrRef->ptrSiguienteuiente=ptrBas->ptrSiguienteuiente;
         printf ("El dato recuperado es %d\n", ptrBas->dato);
         free(ptrBas);
     }

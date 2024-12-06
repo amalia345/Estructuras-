@@ -67,13 +67,19 @@ int meterNodo(struct nodo *nodoReferencia, int dato1) {
 
     // Si no hay ningún nodo en la lista (solo está el nodo de referencia)
     if (nodoReferencia->punteroSiguiente == NULL) {  
-        nodoReferencia->punteroSiguiente = nuevoNodo;  // Conectar el nodo de referencia con el nuevo nodo
-        nuevoNodo->punteroAnterior = nodoReferencia;  // Conectar el nuevo nodo con el nodo de referencia hacia atrás
+        nodoReferencia->punteroSiguiente = nuevoNodo;  // Conectar el nodo de referencia con el nuevo
+         //nodo
+        nuevoNodo->punteroAnterior = nodoReferencia;  // Conectar el nuevo nodo con el nodo de referencia
+         //hacia atrás
     } else {  // Si ya hay nodos en la lista, se inserta el nuevo nodo al principio
-        nuevoNodo->punteroSiguiente = nodoReferencia->punteroSiguiente;  // Conectar el nuevo nodo al nodo que estaba al principio
-        nodoReferencia->punteroSiguiente->punteroAnterior = nuevoNodo;  // Actualizar el puntero hacia atrás del nodo siguiente al nuevo nodo
-        nuevoNodo->punteroAnterior = nodoReferencia;  // Conectar el nuevo nodo con el nodo de referencia hacia atrás
-        nodoReferencia->punteroSiguiente = nuevoNodo;  // Conectar el nodo de referencia con el nuevo nodo hacia adelante
+        nuevoNodo->punteroSiguiente = nodoReferencia->punteroSiguiente;  // Conectar el nuevo nodo al 
+        //nodo que estaba al principio
+        nodoReferencia->punteroSiguiente->punteroAnterior = nuevoNodo;  // Actualizar el puntero hacia
+         //atrás del nodo siguiente al nuevo nodo
+        nuevoNodo->punteroAnterior = nodoReferencia;  // Conectar el nuevo nodo con el nodo de referencia
+         //hacia atrás
+        nodoReferencia->punteroSiguiente = nuevoNodo;  // Conectar el nodo de referencia con el nuevo 
+        //nodo hacia adelante
     }
     return 0;
 }

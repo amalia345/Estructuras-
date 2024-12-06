@@ -27,7 +27,7 @@ ESTA ES UNA PILA DINAMICA
 #include <stdlib.h>
 struct nodo{
 int dato;
-struct nodo  *ptrSiguienteuiente;
+struct nodo  *ptrSiguienteuienteuiente;
 };
 int main(){
     struct nodo *ptrReferencia, *ptrNuevouevo, *ptrRecogerorrer, *ptrGarbage;
@@ -35,21 +35,21 @@ int main(){
     ptrReferencia=NULL;
     ptrNuevouevo=(struct nodo*) malloc(sizeof(struct nodo));
     scanf("%d\n", &ptrNuevouevo->dato);
-    ptrNuevouevo->ptrSiguienteuiente=NULL;
+    ptrNuevouevo->ptrSiguienteuienteuiente=NULL;
     ptrReferencia=ptrNuevouevo;
     ptrNuevouevo=(struct nodo*)malloc(sizeof(struct nodo));
     printf("Ingrese un entero");
     scanf("%d\n",&ptrNuevouevo->dato);
-    ptrNuevouevo->ptrSiguienteuiente=NULL;
+    ptrNuevouevo->ptrSiguienteuienteuiente=NULL;
     //Enlaces para meter los nodos 1 y 2
-    ptrNuevouevo->ptrSiguienteuiente=ptrReferencia;
+    ptrNuevouevo->ptrSiguienteuienteuiente=ptrReferencia;
     ptrReferencia=ptrNuevouevo;
 
     ptrNuevouevo=(struct nodo*)malloc(sizeof(struct nodo));
     printf("\nIngrese un entero");
     scanf("%d\n",&ptrNuevouevo->dato);
 
-    ptrNuevouevo->ptrSiguienteuiente=ptrReferencia;
+    ptrNuevouevo->ptrSiguienteuienteuiente=ptrReferencia;
     ptrReferencia=ptrNuevouevo; 
 
 
@@ -57,18 +57,18 @@ int main(){
     
 while (ptrRecogerorrer!=NULL){
     printf("%d\n", ptrRecogerorrer->dato);
-    ptrRecogerorrer=ptrRecogerorrer->ptrSiguienteuiente;
+    ptrRecogerorrer=ptrRecogerorrer->ptrSiguienteuienteuiente;
 
 }
 ptrGarbage=ptrReferencia;
-ptrReferencia=ptrGarbage->ptrSiguienteuiente;
+ptrReferencia=ptrGarbage->ptrSiguienteuienteuiente;
 printf("El dato recuperado es  %d\n", ptrGarbage->dato);
 free(ptrGarbage);
 
 ptrRecogerorrer=ptrReferencia;
 while (ptrRecogerorrer !=NULL){
     printf ("%d\n", ptrRecogerorrer->dato);
-    ptrRecogerorrer=ptrRecogerorrer->ptrSiguienteuiente;
+    ptrRecogerorrer=ptrRecogerorrer->ptrSiguienteuienteuiente;
     /* code */
 }
 return 0; 

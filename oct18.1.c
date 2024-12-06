@@ -3,7 +3,7 @@
 
 struct nodo{
     int dato;
-    struct nodo *ptrSiguiente;
+    struct nodo *ptrSiguienteuiente;
     struct nodo *ptrAnterior;
 };
 //prototipos de funciones 
@@ -48,7 +48,7 @@ struct nodo* crearNodo (int datoDeEntrada){//un nod es una cajita de 3 elementos
     struct nodo *ptrNuevo;
     ptrNuevo=(struct nodo*)malloc(sizeof(struct nodo));//malloc asigna memoria
     ptrNuevo->dato=datoDeEntrada;
-    ptrNuevo->ptrSiguiente=NULL;//NULL significa que esta vacio
+    ptrNuevo->ptrSiguienteuiente=NULL;//NULL significa que esta vacio
     ptrNuevo->ptrAnterior=NULL;
     return ptrNuevo;
 };
@@ -56,34 +56,34 @@ struct nodo* crearNodo (int datoDeEntrada){//un nod es una cajita de 3 elementos
 int meterNodo (struct nodo *ptrRef, int datoDeEntrada){
     struct nodo *ptrNew;
     ptrNew = crearNodo (datoDeEntrada);
-    if (ptrRef->ptrSiguiente== NULL && ptrRef->ptrAnterior==NULL){//si ambos punteros son nulos es el primer elemento
-        ptrRef->ptrSiguiente=ptrNew;
+    if (ptrRef->ptrSiguienteuiente== NULL && ptrRef->ptrAnterior==NULL){//si ambos punteros son nulos es el primer elemento
+        ptrRef->ptrSiguienteuiente=ptrNew;
         ptrNew->ptrAnterior=ptrRef;
     }
     else{
-        ptrNew->ptrSiguiente=ptrRef->ptrSiguiente;
-        ptrRef->ptrSiguiente->ptrAnterior=ptrNew;
+        ptrNew->ptrSiguienteuiente=ptrRef->ptrSiguienteuiente;
+        ptrRef->ptrSiguienteuiente->ptrAnterior=ptrNew;
         ptrNew->ptrAnterior=ptrRef;
-        ptrRef->ptrSiguiente=ptrNew;
+        ptrRef->ptrSiguienteuiente=ptrNew;
     }
     return 0;
 }
 
 int imprCont(struct nodo *ptrRef){
     struct nodo *ptrRecoger;
-    ptrRecoger=ptrRef->ptrSiguiente;
+    ptrRecoger=ptrRef->ptrSiguienteuiente;
     while (ptrRecoger!=NULL){
         printf ("%d\t", ptrRecoger->dato);
-        ptrRecoger=ptrRecoger->ptrSiguiente;
+        ptrRecoger=ptrRecoger->ptrSiguienteuiente;
     }
 return 0;
 }
 
 int imprContReversa(struct nodo *ptrRef){
     struct nodo *ptrRecoger;
-    ptrRecoger=ptrRef->ptrSiguiente;
-    while (ptrRecoger->ptrSiguiente!=NULL)
-        ptrRecoger=ptrRecoger->ptrSiguiente;
+    ptrRecoger=ptrRef->ptrSiguienteuiente;
+    while (ptrRecoger->ptrSiguienteuiente!=NULL)
+        ptrRecoger=ptrRecoger->ptrSiguienteuiente;
     while (ptrRecoger!=ptrRef){
         printf ("%d\t", ptrRecoger->dato);
         ptrRecoger=ptrRecoger->ptrAnterior;
