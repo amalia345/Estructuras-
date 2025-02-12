@@ -1,6 +1,6 @@
 //LISTA SENCILLA
 //Declaración de librerias
-#include <stdio.h>//ENtras y salidas
+#include <stdio.h>//ENtradas y salidas inputy y output
 #include <stdlib.h>//Asignacion de memoria y limpieza de punteros
 
 // Definimos el nodo

@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 // Direccion dememoria - apuntador 
-typedef struct 
+typedef struct //tipo de función de struct
     {
         char nombre[50];
         int edad; 
