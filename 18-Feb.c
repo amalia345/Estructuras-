@@ -25,7 +25,7 @@ int main() {
 
     printf("Adivina el número entre 1 y 100.\n");
 
-    do {
+    do {//haz
         printf("Ingresa un número entre %d y %d: ", min, max);
         scanf("%d", &adivinanza);
         preguntas++;//contador de las veches que vas preguntando 
@@ -40,7 +40,7 @@ int main() {
             printf("¡Felicidades! Adivinaste el número en %d preguntas.\n", preguntas);
         }
     } while (adivinanza != numero);//Ciclo para ir contando  
-    //while significa que hasta que  
+    //while significa mientras  
     //while para que cada que hagas un numero 
 
     // Calcular el mejor caso, peor caso y promedio
